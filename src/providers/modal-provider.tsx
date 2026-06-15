@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Calendar, MessageSquare, Send, X } from "lucide-react";
+import { MessageSquare, Send, X } from "lucide-react";
 import Image from "next/image";
 import React, { createContext, useContext, useState } from "react";
 
@@ -91,7 +91,7 @@ I would like a free growth consultation.`;
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      
+
       // Clear all form fields immediately
       setName("");
       setEmail("");
@@ -145,12 +145,12 @@ I would like a free growth consultation.`;
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-[#ff6a00] to-[#ff8c42] text-black font-black text-lg shadow-[0_0_15px_rgba(255,106,0,0.3)] mb-4">
                     ✓
                   </div>
-                  
+
                   <h3 className="text-xl sm:text-2xl font-black text-[#F5F5F5] uppercase tracking-tight leading-tight">
                     Thank You! <br />
                     Your Growth Request Has Been Received.
                   </h3>
-                  
+
                   <p className="text-xs text-[#9CA3AF] mt-3 leading-relaxed max-w-[340px]">
                     Our team will review your information and contact you shortly.
                   </p>

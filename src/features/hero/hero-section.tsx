@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, Calendar, Sparkles } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 import { Navbar } from "@/components/layout/navbar";
@@ -80,7 +79,7 @@ function FloatingBadge({
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
-  const { ref: primaryCtaRef, position: primaryCtaPos } = useMagnetic(0.32);
+  const { ref: primaryCtaRef, position: primaryCtaPos } = useMagnetic<HTMLDivElement>(0.32);
   const { openLeadModal } = useModal();
 
   // Animation variants
@@ -109,7 +108,7 @@ export function HeroSection() {
   // Staggered word-by-word headline configurations
   const headlineText = "Growing Brands Through Performance Marketing";
   const headlineWords = headlineText.split(" ");
-  
+
   const headlineContainerVariants = {
     hidden: {},
     visible: {
@@ -157,7 +156,7 @@ export function HeroSection() {
       {/* Main Grid Content */}
       <div className="relative z-10 mx-auto flex-1 w-full max-w-[1440px] px-6 sm:px-12 flex items-center pt-24 pb-12 lg:pt-0 lg:pb-0">
         <div className="grid w-full items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-          
+
           {/* Left Content Column */}
           <motion.div
             initial="hidden"
@@ -224,10 +223,10 @@ export function HeroSection() {
 
             {/* CTA Actions */}
             <motion.div variants={itemVariants} className="mt-2 flex flex-col sm:flex-row gap-4">
-              
+
               {/* Primary CTA (Magnetic Pull) */}
               <motion.div
-                ref={primaryCtaRef as any}
+                ref={primaryCtaRef as React.RefObject<HTMLDivElement>}
                 animate={reduceMotion ? {} : { x: primaryCtaPos.x, y: primaryCtaPos.y }}
                 transition={{ type: "spring", stiffness: 180, damping: 15 }}
                 className="w-full sm:w-auto"

@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
  * A hook that creates a magnetic pull effect towards the cursor.
  * @param strength The multiplier of the pull (0.1 to 1.0)
  */
-export function useMagnetic(strength = 0.35) {
-  const ref = useRef<HTMLElement | null>(null);
+export function useMagnetic<T extends HTMLElement = HTMLElement>(strength = 0.35) {
+  const ref = useRef<T | null>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -17,14 +17,14 @@ export function useMagnetic(strength = 0.35) {
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const rect = element.getBoundingClientRect();
-      
+
       // Calculate mouse position relative to the element's center
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      
+
       const x = clientX - centerX;
       const y = clientY - centerY;
-      
+
       // Pull the element towards the cursor
       setPosition({ x: x * strength, y: y * strength });
     };

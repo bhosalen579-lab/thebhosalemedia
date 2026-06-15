@@ -5,14 +5,11 @@ import {
   ArrowUpRight,
   Award,
   BarChart,
-  Calendar,
   ChevronDown,
   Mail,
   MessageSquare,
   Phone,
-  Play,
   RotateCcw,
-  Scale,
   Sparkles,
   Target,
   X,
@@ -197,13 +194,13 @@ export function PlaceholderSections() {
   const handleAuditCalculate = () => {
     // Generate simple growth score based on selections
     let score = 42;
-    
+
     // Q1 Discovery
     if (q1Discovery === "word-of-mouth") score += 8;
     if (q1Discovery === "google-search") score += 18;
     if (q1Discovery === "social-media") score += 14;
     if (q1Discovery === "pamphlets") score += 4;
-    
+
     // Q2 Enquiries
     if (q2Enquiries === "less-10") score += 5;
     if (q2Enquiries === "10-50") score += 12;
@@ -256,7 +253,7 @@ Industry: ${inferredIndustry}
 Phone: ${auditPhone}
 
 I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule my growth consultation.`;
-    
+
     const targetWhatsappUrl = `https://wa.me/919740540724?text=${encodeURIComponent(messageText)}`;
     setSubmittedAuditWhatsappUrl(targetWhatsappUrl);
 
@@ -291,11 +288,11 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
 
   return (
     <div className="bg-[#050505] text-[#ffffff] font-sans relative z-10 select-text">
-      
+
       {/* 3. Upgraded Services Ecosystem Section */}
       <section id="services" className="relative border-t border-white/5 py-24 px-6 sm:px-12 min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_80%_20%,rgba(255,106,0,0.03),transparent_40%)]" />
-        
+
         <div className="max-w-[1200px] w-full flex flex-col gap-12">
           <div className="flex flex-col gap-4 max-w-[650px]">
             <span className="flex h-5 w-fit items-center justify-center rounded-full border border-[#ff6a00]/30 bg-[#ff6a00]/10 px-3.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#ff8c42] shadow-[0_0_10px_rgba(255,106,0,0.1)]">
@@ -316,9 +313,8 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors focus:outline-none focus:ring-1 focus:ring-[#ff6a00] cursor-pointer ${
-                  activeCategory === cat ? "text-white" : "text-white/40 hover:text-white"
-                }`}
+                className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors focus:outline-none focus:ring-1 focus:ring-[#ff6a00] cursor-pointer ${activeCategory === cat ? "text-white" : "text-white/40 hover:text-white"
+                  }`}
               >
                 {activeCategory === cat && (
                   <motion.span
@@ -452,7 +448,7 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
                         {project.title}
                       </h4>
                     </div>
-                    
+
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 text-white backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
                       <ArrowUpRight className="h-4.5 w-4.5 text-white group-hover:text-[#ff6a00] transition-colors" />
                     </span>
@@ -543,7 +539,7 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
       {/* 6. Authority-Building Trust Sections (Why choose, Process, Framework) */}
       <section id="about" className="relative border-t border-white/5 py-24 px-6 sm:px-12 flex items-center justify-center">
         <div className="max-w-[1200px] w-full flex flex-col gap-20">
-          
+
           {/* Why Choose TBM Grid */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-6">
@@ -606,9 +602,9 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
       {/* 7. Redesigned Interactive Marketing Audit (Target Audience: Indian Businesses) */}
       <section className="relative border-t border-white/5 py-24 px-6 sm:px-12 flex items-center justify-center bg-gradient-to-b from-[#050505] to-[#070707]">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(255,106,0,0.02),transparent_40%)]" />
-        
+
         <div className="max-w-[720px] w-full glass-panel border border-white/10 rounded-[2.5rem] p-6 sm:p-10 flex flex-col items-center gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-          
+
           <div className="text-center flex flex-col items-center gap-3">
             <span className="flex h-5 w-fit items-center justify-center rounded-full border border-[#ff6a00]/30 bg-[#ff6a00]/10 px-3.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#ff8c42] shadow-[0_0_10px_rgba(255,106,0,0.1)]">
               Interactive Marketing Audit
@@ -622,7 +618,7 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
           </div>
 
           <div className="w-full mt-4 min-h-[220px]">
-            
+
             {/* Q1: How do customers currently find you? */}
             {quizStep === 0 && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col gap-4">
@@ -766,7 +762,7 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
             {/* Step 5: Score & Dynamic Outcomes Reveal */}
             {quizStep === 5 && calculatedScore !== null && (
               <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="flex flex-col items-center gap-6 text-center">
-                
+
                 {/* Score Dial */}
                 <div className="relative flex items-center justify-center h-28 w-28 rounded-full border border-white/5 bg-white/[0.01]">
                   <div className="absolute inset-1 rounded-full border border-dashed border-[#ff6a00]/25 animate-spin" style={{ animationDuration: "14s" }} />
@@ -783,10 +779,10 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
                       {q4Challenge === "walkins"
                         ? "• Set up and verify Google Local Search profiles to show up on Google Maps.\n• Run localized ad campaigns targeting customer pin codes within 5km."
                         : q4Challenge === "bookings"
-                        ? "• Build a direct WhatsApp-friendly single-page query landing page.\n• Hook up automated welcome replies to avoid losing enquiries."
-                        : q4Challenge === "trust"
-                        ? "• Design high-contrast visual portfolio guides and client review sheets.\n• Refresh social assets into professional, cohesive grids."
-                        : "• Review search terms lists weekly to block wasted keyword ad spend.\n• Deploy meta analytics pixels to monitor specific conversions."}
+                          ? "• Build a direct WhatsApp-friendly single-page query landing page.\n• Hook up automated welcome replies to avoid losing enquiries."
+                          : q4Challenge === "trust"
+                            ? "• Design high-contrast visual portfolio guides and client review sheets.\n• Refresh social assets into professional, cohesive grids."
+                            : "• Review search terms lists weekly to block wasted keyword ad spend.\n• Deploy meta analytics pixels to monitor specific conversions."}
                     </p>
                   </div>
 
@@ -796,10 +792,10 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
                       {q4Challenge === "walkins"
                         ? "Google Local Business Maps Listing & Hyper-Local Meta Ad Funnels"
                         : q4Challenge === "bookings"
-                        ? "WhatsApp Query Automation & Mobile Landing Page Funnels"
-                        : q4Challenge === "trust"
-                        ? "Core Visual Branding Guidelines & Premium Website Restructuring"
-                        : "Paid Campaigns Performance Auditing & E-com Conversion Re-Modeling"}
+                          ? "WhatsApp Query Automation & Mobile Landing Page Funnels"
+                          : q4Challenge === "trust"
+                            ? "Core Visual Branding Guidelines & Premium Website Restructuring"
+                            : "Paid Campaigns Performance Auditing & E-com Conversion Re-Modeling"}
                     </p>
                   </div>
 
@@ -809,10 +805,10 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
                       {q4Challenge === "walkins"
                         ? "Consistently drive local client store walk-ins and direct calls every week."
                         : q4Challenge === "bookings"
-                        ? "Capture 15 to 30 qualified enquiries directly on your phone month-over-month."
-                        : q4Challenge === "trust"
-                        ? "Double the trust conversion rates of cold page visitors into paid bookings."
-                        : "Lower overall enquiry costs by 30% while eliminating wasted ad budgets."}
+                          ? "Capture 15 to 30 qualified enquiries directly on your phone month-over-month."
+                          : q4Challenge === "trust"
+                            ? "Double the trust conversion rates of cold page visitors into paid bookings."
+                            : "Lower overall enquiry costs by 30% while eliminating wasted ad budgets."}
                     </p>
                   </div>
                 </div>
@@ -926,12 +922,12 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-[#ff6a00] to-[#ff8c42] text-black font-black text-lg shadow-[0_0_15px_rgba(255,106,0,0.3)] mb-4">
                   ✓
                 </div>
-                
+
                 <h3 className="text-xl sm:text-2xl font-black text-[#F5F5F5] uppercase tracking-tight leading-tight">
                   Thank You! <br />
                   Your Growth Request Has Been Received.
                 </h3>
-                
+
                 <p className="text-xs text-[#9CA3AF] mt-3 leading-relaxed max-w-[340px]">
                   Our team will review your information and contact you shortly.
                 </p>
@@ -1019,9 +1015,9 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
         className="min-h-screen flex items-center justify-center relative border-t border-white/5 py-24 px-6 sm:px-12 bg-gradient-to-b from-[#050505] to-[#010101]"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_100%,rgba(255,106,0,0.04),transparent_50%)]" />
-        
+
         <div className="max-w-[1200px] w-full grid md:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left copy column */}
           <div className="flex flex-col gap-6">
             <span className="flex h-5 w-fit items-center justify-center rounded-full border border-[#ff6a00]/30 bg-[#ff6a00]/10 px-3.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#ff8c42] shadow-[0_0_10px_rgba(255,106,0,0.1)]">
@@ -1047,7 +1043,7 @@ I completed the Growth Audit and scored ${calculatedScore}/100. Let's schedule m
 
           {/* Right Direct CTA Cards Column */}
           <div className="flex flex-col gap-4">
-            
+
             {/* Phone Number Click-To-Call */}
             <a
               href="tel:+919740540724"
